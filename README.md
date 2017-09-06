@@ -1,4 +1,4 @@
-#nsfw_tornado_demo
+# nsfw_tornado_demo
 
 将nsfw算法用tornado部署成web服务
 
@@ -9,6 +9,9 @@
 3. statics：这里准备放一些静态文件，比如图片，css 和 javascript 文件等。
 4. templates：这里放模板文件，都是以 html 为扩展名的，它们将直接面对用户。
 
-请安装caffe:cpu github[https://github.com/BVLC/caffe/tree/master/python/caffe]
-sudo docker run --volume=$(pwd):/workspace caffe:cpu python hello.py
+请安装caffe:cpu github[https://github.com/BVLC/caffe]
+sudo docker run -p 8000:8000 --volume=$(pwd):/workspace caffe:cpu python server.py
+
+执行命令
+curl localhost:8000?url=图片URL路径
 
